@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+          <h3 class="mb-0">Profile Information</h3>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-md-4 fw-bold">Title:</div>
+            <div class="col-md-8">{{account?.title || '-'}}</div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-4 fw-bold">First Name:</div>
+            <div class="col-md-8">{{account?.firstName || '-'}}</div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-4 fw-bold">Last Name:</div>
+            <div class="col-md-8">{{account?.lastName || '-'}}</div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-4 fw-bold">Email:</div>
+            <div class="col-md-8">{{account?.email || '-'}}</div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-4 fw-bold">Role:</div>
+            <div class="col-md-8">
+              <span class="badge" [ngClass]="account?.role === 'Admin' ? 'bg-danger' : 'bg-info'">
+                {{account?.role || '-'}}
+              </span>
+            </div>
+          </div>
+          <hr>
+          <div class="d-flex gap-2">
+            <a routerLink="/profile/update" class="btn btn-primary">Edit Profile</a>
+            <button class="btn btn-danger" (click)="deleteAccount()">Delete Account</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

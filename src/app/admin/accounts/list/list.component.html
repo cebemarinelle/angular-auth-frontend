@@ -1,0 +1,25 @@
+<div class="card shadow">
+  <div class="card-header bg-primary text-white">
+    <h3>Account Management</h3>
+    <a routerLink="add" class="btn btn-success float-end">Create Account</a>
+  </div>
+  <div class="card-body">
+    <div *ngIf="loading" class="text-center">Loading...</div>
+    <table class="table table-striped">
+      <thead>
+        <tr><th>Name</th><th>Email</th><th>Role</th><th>Actions</th></tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let account of accounts">
+          <td>{{account.title}} {{account.firstName}} {{account.lastName}}</td>
+          <td>{{account.email}}</td>
+          <td>{{account.role}}</td>
+          <td>
+            <a [routerLink]="['edit', account.id]" class="btn btn-sm btn-primary">Edit</a>
+            <button (click)="deleteAccount(account.id)" class="btn btn-sm btn-danger ms-1">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

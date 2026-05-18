@@ -4,19 +4,16 @@
     <a class="navbar-brand fw-bold" routerLink="/">
       🚀 Angular Auth Boilerplate
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+          <a class="nav-link" routerLink="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
+          <a class="nav-link" routerLink="/profile">Profile</a>
         </li>
         <li class="nav-item" *ngIf="account?.role === 'Admin'">
-          <a class="nav-link text-warning" routerLink="/admin" routerLinkActive="active">Admin Panel</a>
+          <a class="nav-link text-warning" routerLink="/admin">Admin Panel</a>
         </li>
         <li class="nav-item">
           <button class="btn btn-outline-danger ms-2" (click)="logout()">Logout</button>
@@ -25,9 +22,6 @@
     </div>
   </div>
 </nav>
-
-<!-- Subnav (for admin pages) -->
-<router-outlet name="subnav"></router-outlet>
 
 <!-- Alert Messages -->
 <alert></alert>

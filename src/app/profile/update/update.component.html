@@ -1,0 +1,66 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-header bg-warning text-dark">
+          <h3 class="mb-0">Edit Profile</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label class="form-label fw-bold">Title</label>
+              <select formControlName="title" class="form-select">
+                <option value="">Select Title</option>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Ms">Ms</option>
+              </select>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">First Name</label>
+                <input type="text" formControlName="firstName" class="form-control">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">Last Name</label>
+                <input type="text" formControlName="lastName" class="form-control">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-bold">Email</label>
+              <input type="email" formControlName="email" class="form-control">
+            </div>
+
+            <div class="card bg-light mt-4">
+              <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0">Change Password</h5>
+              </div>
+              <div class="card-body">
+                <p class="text-muted">Leave blank to keep current password</p>
+                <div class="mb-3">
+                  <label class="form-label">New Password</label>
+                  <input type="password" formControlName="password" class="form-control">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Confirm Password</label>
+                  <input type="password" formControlName="confirmPassword" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 mt-4">
+              <button type="submit" class="btn btn-primary" [disabled]="submitting">
+                <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
+                Save Changes
+              </button>
+              <a routerLink="/profile" class="btn btn-secondary">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
