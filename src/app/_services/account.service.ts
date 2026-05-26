@@ -66,8 +66,9 @@ export class AccountService {
     return this.http.post(`${baseUrl}/validate-reset-token`, { token });
   }
 
+  // FIXED: Removed confirmPassword from the request body
   resetPassword(token: string, password: string, confirmPassword: string) {
-    return this.http.post(`${baseUrl}/reset-password`, { token, password, confirmPassword });
+    return this.http.post(`${baseUrl}/reset-password`, { token, password });
   }
 
   getAll() {
