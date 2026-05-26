@@ -1,0 +1,30 @@
+.sidebar {
+  background-color: #343a40;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.sidebar .nav-link:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+  color: white;
+  background-color: #007bff;
+}
+
+main {
+  margin-left: 16.666%;
+  padding-top: 20px;
+}
