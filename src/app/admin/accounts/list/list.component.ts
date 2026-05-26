@@ -42,11 +42,11 @@ export class ListComponent implements OnInit {
   }
 
   deleteAccount(id: string) {
-    if (confirm('Delete this account?')) {
+    if (confirm('Are you sure you want to delete this account?')) {
       this.accountService.delete(id).subscribe({
         next: () => {
           this.accounts = this.accounts.filter(x => x.id !== id);
-          this.alertService.success('Account deleted');
+          this.alertService.success('Account deleted successfully');
         },
         error: (error) => {
           console.error('Delete failed:', error);
