@@ -39,13 +39,28 @@ export class LoginComponent implements OnInit {
     if (this.form.invalid) return;
 
     this.loading = true;
-    this.accountService.login(this.f['email'].value, this.f['password'].value)
+    
+    const email = this.f['email'].value;
+    const password = this.f['password'].value;
+    
+    console.log('Attempting login for:', email);
+    
+    this.accountService.login(email, password)
       .subscribe({
-        next: () => {
+        next: (response) => {
+          console.log('Login successful:', response);
           this.router.navigate(['/home']);
         },
         error: (error: any) => {
-          this.alertService.error(error);
+          console.error('Full error object:', error);
+          // Extract the actual error message
+          let errorMessage = 'Login failed';
+          if (error.error?.message) {
+            errorMessage = error.error.message;
+          } else if (error.message) {
+            errorMessage = error.message;
+          }
+          this.alertService.error(errorMessage);
           this.loading = false;
         }
       });
