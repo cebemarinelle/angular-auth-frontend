@@ -1,24 +1,11 @@
-.card {
-  border-radius: 10px;
-  overflow: hidden;
+.card-body {
+  background-color: white;
 }
 
-.table th, .table td {
-  vertical-align: middle;
-  padding: 12px 15px;
+.table td {
+  color: #212529 !important;
 }
 
-.badge {
-  font-size: 12px;
-  font-weight: 500;
-  border-radius: 20px;
-}
-
-.btn-sm {
-  padding: 4px 10px;
-  font-size: 12px;
-}
-
-.table-hover tbody tr:hover {
-  background-color: rgba(0, 123, 255, 0.05);
+.table th {
+  color: white !important;
 }
