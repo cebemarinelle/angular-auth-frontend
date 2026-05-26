@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AccountService, AlertService } from '../../../_services';
@@ -12,11 +12,12 @@ import { AccountService, AlertService } from '../../../_services';
 })
 export class ListComponent implements OnInit {
   accounts: any[] = [];
-  loading = false;
+  loading = true;
 
   constructor(
     private accountService: AccountService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
@@ -25,6 +26,7 @@ export class ListComponent implements OnInit {
 
   loadAccounts() {
     this.loading = true;
+    this.cdr.detectChanges();
     console.log('Loading accounts...');
     
     this.accountService.getAll().subscribe({
@@ -32,11 +34,14 @@ export class ListComponent implements OnInit {
         console.log('Accounts loaded:', data);
         this.accounts = data;
         this.loading = false;
+        this.cdr.detectChanges();
+        console.log('Loading set to false, accounts count:', this.accounts.length);
       },
       error: (error) => {
         console.error('Failed to load accounts:', error);
         this.alertService.error(error.error?.message || 'Failed to load accounts');
         this.loading = false;
+        this.cdr.detectChanges();
       }
     });
   }
@@ -47,6 +52,7 @@ export class ListComponent implements OnInit {
         next: () => {
           this.accounts = this.accounts.filter(x => x.id !== id);
           this.alertService.success('Account deleted successfully');
+          this.cdr.detectChanges();
         },
         error: (error) => {
           console.error('Delete failed:', error);
