@@ -6,7 +6,7 @@ This is a **Full-Stack Authentication System** built with:
 - **Frontend**: Angular 21 with Standalone Components
 - **Backend**: Node.js + Express + MySQL
 - **Email Service**: Brevo (Sendinblue) API
-- **Database**: Aiven MySQL (Cloud) managed via DBeaver
+- **Database**: MySQL (phpMyAdmin)
 - **Deployment**: Render (Frontend: Static Site, Backend: Web Service)
 
 ---
@@ -36,11 +36,9 @@ This is a **Full-Stack Authentication System** built with:
 | Tool | Purpose |
 |------|---------|
 | **VS Code** | Code Editor |
-| **DBeaver** | Database Management (MySQL client) |
-| **XAMPP** | Local MySQL (optional) |
 | **Git** | Version Control |
 | **Postman** | API Testing (optional) |
-
+| ** PhpMyAdmin" |
 ### Frontend
 
 | Technology | Version |
@@ -65,7 +63,6 @@ This is a **Full-Stack Authentication System** built with:
 
 | Service | Purpose | Tier |
 |---------|---------|------|
-| **Aiven** | MySQL Database | Free |
 | **Brevo** | Transactional Email API | Free (300 emails/day) |
 | **Render** | Frontend + Backend Hosting | Free |
 
@@ -93,7 +90,6 @@ This is a **Full-Stack Authentication System** built with:
 - Node.js (v22+)
 - Angular CLI (v21+)
 - Git
-- DBeaver (for database management)
 - Brevo account (for email)
 - Aiven account (for cloud MySQL)
 - Render account (for deployment)
@@ -168,7 +164,7 @@ Click Test Connection → Should show "Connected"
 Click Finish
 
 5. Create Database Table
-In DBeaver, open SQL editor and run:
+In phpMyAdmin (instructor's mysql), open SQL editor and run:
 
 sql
 CREATE TABLE users (
@@ -435,7 +431,3 @@ Node.js Documentation
 Render for free hosting
 
 Brevo for email API
-
-Aiven for free MySQL database
-
-DBeaver for database management
