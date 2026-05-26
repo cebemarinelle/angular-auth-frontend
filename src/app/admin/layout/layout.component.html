@@ -1,22 +1,23 @@
 <div class="d-flex">
   <!-- Sidebar -->
-  <div class="bg-dark text-white" style="width: 250px; min-height: 100vh;">
-    <div class="p-3">
-      <h4>Admin Panel</h4>
+  <div class="bg-dark text-white" style="width: 260px; min-height: 100vh;">
+    <div class="p-3 border-bottom border-secondary">
+      <h4 class="mb-0">Admin Panel</h4>
     </div>
-    <hr class="m-0">
-    <nav class="nav flex-column p-3">
-      <a class="nav-link text-white mb-2" routerLink="/admin" routerLinkActive="active">
+    <nav class="nav flex-column p-2">
+      <a class="nav-link text-white px-3 py-2" routerLink="/admin" routerLinkActive="active">
         📊 Dashboard
       </a>
-      <a class="nav-link text-white mb-2" routerLink="/admin/accounts" routerLinkActive="active">
+      <a class="nav-link text-white px-3 py-2" routerLink="/admin/accounts" routerLinkActive="active">
         👥 User Management
       </a>
     </nav>
   </div>
 
   <!-- Main Content -->
-  <div class="flex-grow-1 p-4">
-    <router-outlet></router-outlet>
+  <div class="flex-grow-1 bg-light" style="min-height: 100vh;">
+    <div class="p-4">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
